@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBInput } from "mdbreact";
-import './App.css';
 
 class AgregaTarea extends React.Component {
 

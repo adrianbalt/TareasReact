@@ -28,7 +28,7 @@ class Tarea extends React.Component {
         const tarea = this.props.tarea.tarea;
         const id = this.props.tarea.id;
         const iconoTarea = this.props.tarea.completado ? "check-circle" : "circle";
-        let claseTarea = "ml-3 mt-1";
+        let claseTarea = "ml-3 mt-1 label-tarea";
         if(this.props.tarea.completado)
             claseTarea += " completado";
         let domTarea;
@@ -36,7 +36,7 @@ class Tarea extends React.Component {
         let domBadge;
         if(this.state.editando){
             domIcon = <MDBIcon far icon={iconoTarea} size="2x"/>;
-            domTarea = <div className="ml-3"><input type="text" autoFocus={true} value={this.state.value} onBlur={this.handleBlur} onChange={this.handleChange} className="form-control" /></div>
+            domTarea = <div className="ml-3"><input type="text" autoFocus={true} value={this.state.value} onBlur={this.handleBlur} onChange={this.handleChange} className="form-control input-tarea" /></div>
         }else{
             domIcon = <MDBIcon far icon={iconoTarea} size="2x" onClick={()=>this.props.toggleCompletarTarea(id)}/>
             domTarea = <div className={claseTarea} onDoubleClick={this.handleDoubleClick}>{tarea}</div>;

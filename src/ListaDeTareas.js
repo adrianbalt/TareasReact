@@ -1,5 +1,4 @@
 import React from 'react';
-import { MDBIcon, MDBBadge } from "mdbreact";
 import Tarea from './Tarea';
 
 class ListaDeTareas extends React.Component {

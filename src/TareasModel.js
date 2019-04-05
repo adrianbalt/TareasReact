@@ -65,7 +65,6 @@ class TareasModel {
     toggleAll(checkAll){
         let tareas = this.store(this.key);
         for (let i = 0; i < tareas.length; i++) {
-            const tarea = tareas[i];
             tareas[i].completado = checkAll;
         }
         this.store(this.key, tareas);

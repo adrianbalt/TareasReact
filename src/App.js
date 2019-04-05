@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBBadge, MDBIcon } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBIcon } from "mdbreact";
 import AgregaTarea from './AgregaTarea';
 import ListaDeTareas from './ListaDeTareas';
 import classNames from 'classnames';
-import './App.css';
 
 class App extends Component {
 
