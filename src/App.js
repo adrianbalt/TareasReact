@@ -35,6 +35,11 @@ class App extends Component {
     this.setState({tareas:this.props.model.listarTareas()});
   }
 
+  toggleAll(checkAll){
+    this.props.model.toggleAll(checkAll);
+    this.setState({tareas:this.props.model.listarTareas()});
+  }
+
   borrarTarea(id){
     this.props.model.borrarTarea(id);
     this.setState({tareas:this.props.model.listarTareas()});
@@ -51,15 +56,16 @@ class App extends Component {
 
   render() {
     const incompletas = this.state.tareas.filter((tarea)=>!tarea.completado);
+    let checkAll = incompletas.length > 0;
     let listado;
-    let clase1 = classNames({"active": this.state.ver==this.VER_TODOS}, "btn-pie");
-    let clase2 = classNames({"active": this.state.ver==this.VER_PENDIENTES}, "ml-2", "btn-pie");
-    let clase3 = classNames({"active": this.state.ver==this.VER_COMPLETADOS}, "ml-2", "btn-pie");
-    if(this.state.ver == this.VER_TODOS){
+    let clase1 = classNames({"active": this.state.ver===this.VER_TODOS}, "btn-pie");
+    let clase2 = classNames({"active": this.state.ver===this.VER_PENDIENTES}, "ml-2", "btn-pie");
+    let clase3 = classNames({"active": this.state.ver===this.VER_COMPLETADOS}, "ml-2", "btn-pie");
+    if(this.state.ver === this.VER_TODOS){
       listado = this.state.tareas;
-    }else if(this.state.ver == this.VER_PENDIENTES){
+    }else if(this.state.ver === this.VER_PENDIENTES){
       listado = incompletas;
-    }else if(this.state.ver == this.VER_COMPLETADOS){
+    }else if(this.state.ver === this.VER_COMPLETADOS){
       listado = this.state.tareas.filter((tarea)=>tarea.completado);
     }
     return (
@@ -72,7 +78,7 @@ class App extends Component {
                 {/* <MDBInput label="Agregar Tarea" className="mb-0" />
                 <MDBBtn size="sm">Agregar</MDBBtn> */}
                 <div className="media mt-3 mb-2">
-                  <MDBIcon icon="chevron-down" size="2x"/>
+                  <MDBIcon icon="chevron-down" size="2x" onClick={()=>this.toggleAll(checkAll)}/>
                   <AgregaTarea onSubmit={this.agregarTarea} />
                 </div>
               </div>
