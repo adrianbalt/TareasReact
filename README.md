@@ -2,7 +2,7 @@
 
 ## DEMO
 
-[https://adrianbalt.github.io/TareasReact/](https://adrianbalt.github.io/TareasReact/){:target="_blank"}
+[https://adrianbalt.github.io/TareasReact/](https://adrianbalt.github.io/TareasReact/){target="_blank"}
 
 
 ## Indicaciones
