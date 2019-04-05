@@ -35,16 +35,16 @@ class Tarea extends React.Component {
         let domIcon;
         let domBadge;
         if(this.state.editando){
-            domIcon = <MDBIcon far icon={iconoTarea} size="2x"/>;
+            domIcon = <MDBIcon className="circulo" far icon={iconoTarea} size="2x"/>;
             domTarea = <div className="ml-3"><input type="text" autoFocus={true} value={this.state.value} onBlur={this.handleBlur} onChange={this.handleChange} className="form-control input-tarea" /></div>
         }else{
-            domIcon = <MDBIcon far icon={iconoTarea} size="2x" onClick={()=>this.props.toggleCompletarTarea(id)}/>
+            domIcon = <MDBIcon className="circulo"  far icon={iconoTarea} size="2x" onClick={()=>this.props.toggleCompletarTarea(id)}/>
             domTarea = <div className={claseTarea} onDoubleClick={this.handleDoubleClick}>{tarea}</div>;
             domBadge = (
                 <MDBBadge
                     pill
                     color="danger"
-                    className="ml-2 float-right"
+                    className="ml-2 float-right btn-borra-tarea"
                     onClick={()=>this.props.borrarTarea(id)}>
                     <MDBIcon icon="times" />
                 </MDBBadge>

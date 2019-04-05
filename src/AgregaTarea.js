@@ -23,8 +23,8 @@ class AgregaTarea extends React.Component {
     render(){
         return (
             <div className="media-body ml-3">
-                <form onSubmit={this.handleSubmit}>
-                    <MDBInput label="Agregar Tarea" value={this.state.value} outline  onChange={this.handleChange} required/>
+                <form className="form-agrega-tarea" onSubmit={this.handleSubmit}>
+                    <MDBInput label="Agregar Tarea" className="input-agrega-tarea" value={this.state.value} outline  onChange={this.handleChange} required/>
                 </form>
             </div>
         );
